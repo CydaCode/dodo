@@ -38,7 +38,7 @@ export default function RootLayout({
             </div>
             <SideBarComponent />
             <div className="ml-[60px] flex-1 h-screen overflow-y-auto px-0 md:px-6">
-              <SidebarTrigger />
+              <SidebarTrigger className="ml-[3px]"/>
               {children}
             </div>
           </SidebarProvider>
