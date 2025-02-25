@@ -11,7 +11,7 @@ const MenuSide = () => {
   return (
     <div className="h-screen w-[68px] bg-[#5F2ECF]">
       <div className="w-100 h-screen flex flex-col gap-[30px] items-center py-[30px]">
-        <Link href={"/"} className="pointer">
+        <Link href={"/"} className="!cursor-pointer">
           <Image
             src="/linkedin.svg"
             alt="Linkedin image"
@@ -20,7 +20,7 @@ const MenuSide = () => {
             priority
           />
         </Link>
-        <Link href={"/"} className="pointer">
+        <Link href={"/"} className="cursor-pointer">
           <Image
             src="/figma.svg"
             alt="Linkedin image"
@@ -29,7 +29,7 @@ const MenuSide = () => {
             priority
           />
         </Link>
-        <Link href={"/"} className="pointer">
+        <Link href={"/"} className="cursor-pointer">
           <Image
             src="/figma.svg"
             alt="Linkedin image"
@@ -38,8 +38,8 @@ const MenuSide = () => {
             priority
           />
         </Link>
-        <Button className="h-[45px] w-[35] rounded-[10px] bg-[#FFFFFF] hover:bg-gray-200">
-          <Plus color="#000000" />
+        <Button className="h-[40px] w-[40px] rounded-[10px] !cursor-pointer bg-[#FFFFFF] hover:bg-gray-200">
+          <Plus color="#000000" className="cursor-pointer"/>
         </Button>
       </div>
       

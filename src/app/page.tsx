@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className=" pl-[25px] mb-[90px] pr-[15px] md:px-[30px] flex flex-col ">
      <Navbar />
-     <Separator className="mt-[20px]"/>
+     <Separator className=" mt-[10px] md:mt-[20px]"/>
      <WelcomeSection />
      <GettingStarted />
      <Resources />

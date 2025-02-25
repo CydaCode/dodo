@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Separator } from "@/components/ui/separator";
 import {
@@ -22,6 +22,7 @@ import {
   Star,
 } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 interface Items {
@@ -33,7 +34,7 @@ interface Items {
 const items: Items[] = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: House,
   },
   {
@@ -49,6 +50,7 @@ const items: Items[] = [
 ];
 
 const SideBarComponent = () => {
+  const pathname = usePathname();
   return (
     <Sidebar className="ml-[70px] ">
       <SidebarHeader className="pt-[26px]">
@@ -58,24 +60,34 @@ const SideBarComponent = () => {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="pt-[10px]">
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a
-                      href={item.url}
-                      className="flex items-center gap-3 p-5  rounded-md transition-colors duration-300 hover:bg-[#e9e2f9] hover:text-[#4A24A1]"
-                    >
-                      <item.icon
-                        className=" transition-colors duration-300 group-hover:text-[#4A24A1]"
-                        strokeWidth={3}
-                      />
-                      <span className="font-semibold hover:text-[#4A24A1]">
-                        {item.title}
-                      </span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {items.map((item) => {
+                const isActive = pathname === item.url; // Check if active
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild>
+                      <a
+                        href={item.url}
+                        className={`flex items-center gap-3 p-5 rounded-md transition-colors duration-300 
+                          ${
+                            isActive
+                              ? "bg-[#e9e2f9] text-[#4A24A1]" // Active styles
+                              : "hover:bg-[#e9e2f9] hover:text-[#4A24A1]"
+                          }`}
+                      >
+                        <item.icon
+                          className={`transition-colors duration-300 ${
+                            isActive ? "text-[#4A24A1]" : "group-hover:text-[#4A24A1]"
+                          }`}
+                          strokeWidth={3}
+                        />
+                        <span className="font-semibold hover:text-[#4A24A1]">
+                          {item.title}
+                        </span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
               <Separator />
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>

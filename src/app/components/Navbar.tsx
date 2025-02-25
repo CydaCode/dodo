@@ -6,8 +6,8 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className=" w-full flex justify-end p-1 gap-[100px] items-center md:ml-[10px] sm:ml-[40px]">
-      <div className="relative w-full max-w-[370px] ">
+    <div className=" w-full flex justify-end p-1 gap-[50px] md:gap-[100px] items-center md:ml-[10px] ">
+      <div className="relative w-full min-w-[100px] md:max-w-[320px] ">
         <Input placeholder="Search" className="pl-10 pr-4 py-2" />
         <Search
           size={16}
